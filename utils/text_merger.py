@@ -30,12 +30,22 @@ class TextMerger:
         return [' '.join(words[:mid_point]).strip(), ' '.join(words[mid_point:]).strip()]
 
     def add_group_to_merged_chunks(self, merged_chunks, current_group, group_start_time, group_end_time):
-        """Adds a group of text chunks to the merged list, splitting if necessary."""
         merged_text = " ".join(c['text'].strip() for c in current_group)
         if len(merged_text) > self.max_length:
             split_texts = self.split_text_properly(merged_text)
-            for text in split_texts:
-                merged_chunks.append({'text': text, 'timestamp': (group_start_time, group_end_time)})
+            total_length = len(merged_text)
+            cumulative_start_time = group_start_time
+
+            for i, text in enumerate(split_texts):
+                portion_length = len(text)
+                if i < len(split_texts) - 1:  # Not the last item
+                    portion_duration = (portion_length / total_length) * (group_end_time - group_start_time)
+                    chunk_end_time = cumulative_start_time + portion_duration
+                else:
+                    chunk_end_time = group_end_time  # Last item takes the remainder
+
+                merged_chunks.append({'text': text, 'timestamp': (cumulative_start_time, chunk_end_time)})
+                cumulative_start_time = chunk_end_time  # Next chunk starts where the last one ended
         else:
             merged_chunks.append({'text': merged_text, 'timestamp': (group_start_time, group_end_time)})
 

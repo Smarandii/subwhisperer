@@ -24,5 +24,16 @@ class FileUtility:
         with open(output_filename, "w", encoding="utf-8") as file:
             for i, chunk in enumerate(chunks, start=1):
                 start_time = FileUtility.format_srt_timestamp(chunk['timestamp'][0])
-                end_time = FileUtility.format_srt_timestamp(chunk['timestamp'][1])
-                file.write(f"{i}\n{start_time} --> {end_time}\n{chunk['text']}\n\n")
+                # Adjust the end time to match the start of the next chunk or keep as is if last chunk
+                if i < len(chunks):
+                    next_start_time = chunks[i]['timestamp'][0]
+                    # Only adjust if next subtitle starts after the current ends
+                    if next_start_time > chunk['timestamp'][1]:
+                        end_time = FileUtility.format_srt_timestamp(next_start_time)
+                    else:
+                        end_time = FileUtility.format_srt_timestamp(chunk['timestamp'][1])
+                else:
+                    end_time = FileUtility.format_srt_timestamp(chunk['timestamp'][1])
+
+                text = chunk['text']
+                file.write(f"{i}\n{start_time} --> {end_time}\n{text}\n\n")
