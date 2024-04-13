@@ -1,5 +1,5 @@
-audio.mp3
-input_video.mp4
-output.srt
-output_video.mp4
+*.mp4
+*.MP4
+*.mp3
+*.srt
 venv
