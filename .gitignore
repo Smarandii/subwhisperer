@@ -4,3 +4,4 @@
 *.srt
 *.json
 venv
+*.wav
