@@ -2,4 +2,5 @@
 *.MP4
 *.mp3
 *.srt
+*.json
 venv

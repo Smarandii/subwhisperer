@@ -1,55 +1,32 @@
 import os
 from utils import (
-    extract_audio_from_video,
-    merge_chunks,
-    get_whisper_pipe,
-    generate_srt_file,
-    add_subtitles_to_video
+    load_chunks_from_json,
+    save_chunks_to_json,
+    process_chunks,
+    extract_and_process_audio,
+    create_video_with_subtitles
 )
 
-audio_file = "audio.mp3"
-video_file = "input_video.mp4"
-subtitle_file = "output.srt"
-output_video_file = "output_video.mp4"
-pipe = get_whisper_pipe()
 
-if os.path.exists(video_file):
-    extract_audio_from_video(
-        input_video_file=video_file,
-        output_audio_file=audio_file
-    )
+def main():
+    audio_file = "audio.mp3"
+    video_file = "input_video.mp4"
+    subtitle_file = "output.srt"
+    output_video_file = "output_video.mp4"
+    chunks_file = 'chunks.json'
 
-if os.path.exists(audio_file):
-    result = pipe(audio_file)
-
-    print("We got text from audio in chunks:")
-    for chunk in result["chunks"]:
-        print("Chunk:", chunk)
-    print("Merging chunks...")
-    merged_chunks = merge_chunks(
-        chunks=result["chunks"],
-        threshold=3.5
-    )
-    print("We got merged chunks:")
-    for chunk in merged_chunks:
-        print("Chunk:", chunk)
-
-    print("Generating srt file...")
-    generate_srt_file(
-        chunks=merged_chunks,
-        output_filename=subtitle_file
-    )
-    print(f"SRT file generated successfully: {subtitle_file}")
-
-    if os.path.exists(subtitle_file):
-        print("Generating video with subtitles...")
-        add_subtitles_to_video(
-            input_video_file=video_file,
-            subtitle_file=subtitle_file,
-            output_file=output_video_file
-        )
-        print(f"Video generated: {output_video_file}")
+    if os.path.exists(chunks_file):
+        print("Skipping extraction of audio, because we found chunks.json...")
+        loaded_chunks = load_chunks_from_json(chunks_file)
+        process_chunks(loaded_chunks, subtitle_file)
     else:
-        print("Subtitles not found!")
-else:
-    print("Input audio not found!")
+        chunks = extract_and_process_audio(audio_file, video_file)
+        if chunks:
+            save_chunks_to_json(chunks, chunks_file)
+            process_chunks(chunks, subtitle_file)
+
+    create_video_with_subtitles(video_file, subtitle_file, output_video_file)
+
+
+if __name__ == "__main__":
+    main()

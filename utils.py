@@ -1,4 +1,5 @@
-import subprocess
+import os
+import json
 
 import torch
 import ffmpeg
@@ -9,25 +10,85 @@ from transformers import (
 )
 
 
-def add_subtitles_to_video(input_video_file, subtitle_file, output_file):
-    cmd = [
-        'ffmpeg',
-        '-i', input_video_file,
-        '-vf', f"subtitles={subtitle_file}",
-        '-c:a', 'copy',
-        output_file
-    ]
-    process = subprocess.run(cmd, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    if process.returncode != 0:
-        print("FFmpeg failed with error code:", process.returncode)
-        print("Output:", process.stdout)
-        print("Error:", process.stderr)
+def process_chunks(chunks, srt_filename):
+    """Process chunks to merge them and generate an SRT file."""
+    print("Merging chunks...")
+    merged_chunks = merge_chunks(chunks=chunks, threshold=3.5)
+    print("We got merged chunks:")
+    for chunk in merged_chunks:
+        print("Chunk:", chunk)
+
+    print("Generating srt file...")
+    generate_srt_file(chunks=merged_chunks, output_filename=srt_filename)
+    print(f"SRT file generated successfully: {srt_filename}")
+
+
+def create_video_with_subtitles(video_file, srt_file, output_video_file):
+    """Generate a video file with subtitles."""
+    if os.path.exists(srt_file):
+        print("Generating video with subtitles...")
+        add_subtitles_to_video(
+            input_video_file=video_file,
+            subtitle_file=srt_file,
+            output_file=output_video_file
+        )
+        print(f"Video generated: {output_video_file}")
     else:
+        print("Subtitles not found!")
+
+
+def extract_and_process_audio(audio_file, video_file):
+    """Extract audio and process it if not already extracted."""
+    if not os.path.exists(audio_file):
+        extract_audio_from_video(input_video_file=video_file, output_audio_file=audio_file)
+    if os.path.exists(audio_file):
+        result = get_whisper_pipe()(audio_file)
+        print("We got text from audio in chunks:")
+        for chunk in result["chunks"]:
+            print("Chunk:", chunk)
+        return result['chunks']
+    else:
+        print("Input audio not found!")
+        return []
+
+
+def add_subtitles_to_video(input_video_file, subtitle_file, output_file):
+    try:
+        video_with_subtitles = ffmpeg.input(input_video_file).output(output_file,
+                                                                     vf=f"subtitles='{subtitle_file}'", **{'c:a': 'copy'})
+        ffmpeg.run(video_with_subtitles, overwrite_output=True)
         print(f"Video with subtitles saved to {output_file}")
+    except ffmpeg.Error as e:
+        error_message = e.stderr.decode() if e.stderr else 'No detailed error message available.'
+        print(f"An error occurred: {error_message}")
 
 
 def extract_audio_from_video(input_video_file, output_audio_file):
     ffmpeg.input(input_video_file).output(output_audio_file).run(overwrite_output=True)
+
+
+def save_chunks_to_json(chunks, filename='chunks.json'):
+    """Saves a list of dictionaries to a JSON file.
+
+    Args:
+        chunks (list): A list of dictionaries containing chunks.
+        filename (str): Filename for the JSON file.
+    """
+    with open(filename, 'w', encoding='utf-8') as f:
+        json.dump(chunks, f, ensure_ascii=False, indent=4)
+
+
+def load_chunks_from_json(filename='chunks.json'):
+    """Loads a list of dictionaries from a JSON file.
+
+    Args:
+        filename (str): Filename of the JSON file to read from.
+
+    Returns:
+        list: A list of dictionaries read from the JSON file.
+    """
+    with open(filename, 'r', encoding='utf-8') as f:
+        return json.load(f)
 
 
 def merge_chunks(chunks, threshold=3.5):
@@ -38,6 +99,8 @@ def merge_chunks(chunks, threshold=3.5):
     group_end_time = None
 
     for chunk in chunks:
+        if chunk['timestamp'][0] is None or chunk['timestamp'][1] is None:
+            continue
         if not current_group:
             current_group.append(chunk)
             group_start_time = chunk['timestamp'][0]
