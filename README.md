@@ -19,7 +19,7 @@ This repository contains a Python application that extracts audio from a video f
 
 1. Clone the repository:
    ```bash
-   git clone https://your-repository-url.git
+   git clone https://github.com/Smarandii/video_subtitler.git
    cd video-subtitler
    ```
 
