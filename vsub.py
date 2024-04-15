@@ -19,17 +19,18 @@ def setup_argument_parser():
 def process_video(video_file, audio_file, subtitle_file=None):
     if subtitle_file is None:
         subtitle_file = f"{os.path.splitext(video_file)[0]}.srt"
-
+    print(f"We got {video_file} - starting video processing...")
     merged_json_file = f"merged_chunks_{os.path.splitext(video_file)[0]}.json"
 
     ae = AudioExtractor()
     fu = FileUtility()
-    sg = SegmentDetector(video_file=video_file)
+    sg = SegmentDetector(audio_file=audio_file)
     tm = TextMerger()
 
     segments = sg.detect_audio_segments()
+    print(f"Found segments: {segments}")
     json_transcriptions = sg.detect_json_transcriptions()
-
+    print(f"Found json transcriptions: {json_transcriptions}")
     if not segments:
         pauses, total_duration_ms = ae.extract_audio_and_find_pauses(video_file, audio_file)
         segments = ae.split_audio_based_on_silence(audio_file, pauses, total_duration_ms)

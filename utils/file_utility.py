@@ -20,7 +20,7 @@ class FileUtility:
         return f"{int(hrs):02}:{int(mins):02}:{int(secs):02},{millis:03}"
 
     @staticmethod
-    def generate_srt_file(chunks, output_filename="output.srt"):
+    def generate_srt_file(chunks, output_filename):
         with open(output_filename, "w", encoding="utf-8") as file:
             for i, chunk in enumerate(chunks, start=1):
                 start_time = FileUtility.format_srt_timestamp(chunk['timestamp'][0])
