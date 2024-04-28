@@ -11,7 +11,7 @@ class AudioExtractor:
         self.min_length = min_length
         self.max_length = max_length
 
-    def extract_audio_and_find_pauses(self, video_file, audio_file='temp_audio.wav'):
+    def extract_audio_and_find_pauses(self, video_file, audio_file='audio.mp3'):
         if not os.path.exists(audio_file):
             ffmpeg.input(video_file).output(audio_file).run()
         sound = AudioSegment.from_file(audio_file)

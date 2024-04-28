@@ -1,5 +1,5 @@
 class TextMerger:
-    def __init__(self, max_length=76, threshold=6):
+    def __init__(self, max_length=76, threshold=10):
         self.max_length = max_length
         self.threshold = threshold
 

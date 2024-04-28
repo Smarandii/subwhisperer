@@ -25,3 +25,11 @@ class WhisperTranscriber:
             torch_dtype=self.torch_dtype,
             device=self.device,
         )
+
+
+if __name__ == "__main__":
+    audio_file = "test.mp3"
+    whisper_transcriber = WhisperTranscriber()
+    whisper_pipe = whisper_transcriber.get_whisper_pipe()
+    result = whisper_pipe(audio_file)
+    print(result)

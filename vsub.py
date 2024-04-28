@@ -11,16 +11,19 @@ from utils.whisper_transcriber import WhisperTranscriber
 def setup_argument_parser():
     parser = argparse.ArgumentParser(description="Process video files for audio extraction and subtitle generation.")
     parser.add_argument("video_file", help="The path to the video file to process.")
-    parser.add_argument("-a", "--audio_file", default="audio.mp3", help="The path to save the extracted audio file.")
+    parser.add_argument("-a", "--audio_file", help="The path to save the extracted audio file.", required=False)
     parser.add_argument("-s", "--subtitle_file", help="The path to save the subtitle file.", required=False)
     return parser
 
 
 def process_video(video_file, audio_file, subtitle_file=None):
+    if audio_file is None:
+        audio_file = f"{os.path.splitext(video_file)[0]}.mp3"
     if subtitle_file is None:
         subtitle_file = f"{os.path.splitext(video_file)[0]}.srt"
-    print(f"We got {video_file} - starting video processing...")
     merged_json_file = f"merged_chunks_{os.path.splitext(video_file)[0]}.json"
+    unmerged_json_chunks_file = f"unmerged_chunks_{os.path.splitext(video_file)[0]}"
+    print(f"We got {video_file} - starting video processing...")
 
     ae = AudioExtractor()
     fu = FileUtility()
@@ -39,11 +42,12 @@ def process_video(video_file, audio_file, subtitle_file=None):
         wt = WhisperTranscriber()
         tp = TranscriptionProcessor(wt.get_whisper_pipe())
         transcriptions = tp.transcribe_segments(segments)
-    else:
+    elif json_transcriptions and not os.path.exists(merged_json_file):
         transcriptions = []
         for transcription in json_transcriptions:
             t = fu.load_chunks_from_json(transcription)
             transcriptions.extend(t)
+        fu.save_chunks_to_json(transcriptions, unmerged_json_chunks_file)
 
     if not os.path.exists(merged_json_file):
         merged_chunks = tm.merge_chunks(transcriptions)
