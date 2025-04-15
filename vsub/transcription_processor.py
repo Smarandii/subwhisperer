@@ -1,4 +1,4 @@
-from vsub.file_utility import FileUtility
+from __init__ import FileUtility
 
 
 class TranscriptionProcessor:

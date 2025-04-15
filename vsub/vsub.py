@@ -1,11 +1,11 @@
 import os
 import argparse
-from vsub.audio_extractor import AudioExtractor
-from vsub.file_utility import FileUtility
-from vsub.segment_detector import SegmentDetector
-from vsub.text_merger import TextMerger
-from vsub.transcription_processor import TranscriptionProcessor
-from vsub.whisper_transcriber import WhisperTranscriber
+
+from __init__ import TextMerger
+from __init__ import FileUtility
+from __init__ import AudioExtractor
+from __init__ import SegmentDetector
+from __init__ import TranscriptionProcessor
 
 
 def setup_argument_parser():
@@ -64,7 +64,3 @@ def main():
     args = parser.parse_args()
 
     process_video(args.video_file, args.audio_file, args.subtitle_file)
-
-
-if __name__ == "__main__":
-    main()
