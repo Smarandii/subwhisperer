@@ -41,7 +41,7 @@ def process_video(video_file, audio_file, subtitle_file=None):
 
     if not json_transcriptions:
         wt = WhisperTranscriber()
-        tp = TranscriptionProcessor(wt.get_whisper_pipe())
+        tp = TranscriptionProcessor(wt.transcribe)
         transcriptions = tp.transcribe_segments(segments)
     elif json_transcriptions and not os.path.exists(merged_json_file):
         transcriptions = []

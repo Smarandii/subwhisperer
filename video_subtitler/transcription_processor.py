@@ -12,11 +12,11 @@ class TranscriptionProcessor:
             result = self.whisper_model(segment)
             current_segment = []
             segment_path = f"{segment}.json"
-            for chunk in result['chunks']:
-                if chunk['timestamp'][0] is None or chunk['timestamp'][1] is None:
+            for chunk in result['segments']:
+                if chunk['start'] is None or chunk['end'] is None:
                     continue
-                adjusted_start_time = round(chunk['timestamp'][0] + cumulative_time, 2)
-                adjusted_end_time = round(chunk['timestamp'][1] + cumulative_time, 2)
+                adjusted_start_time = round(chunk['start'] + cumulative_time, 2)
+                adjusted_end_time = round(chunk['end'] + cumulative_time, 2)
                 adjusted_chunk = {'text': chunk['text'], 'timestamp': (adjusted_start_time, adjusted_end_time)}
                 current_segment.append(adjusted_chunk)
             if current_segment:
