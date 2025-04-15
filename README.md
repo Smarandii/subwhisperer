@@ -23,9 +23,33 @@ This repository contains a Python application that extracts audio from a video f
    ```
 
 2. Install the required Python libraries:
-   ```bash
-   pip install -r requirements.txt
-   ```
+   1. if you have CUDA:
+      1. Check your cuda version
+         ```bash
+         nvidia-smi
+         ```
+         ```bash
+         +-----------------------------------------------------------------------------------------+
+         | NVIDIA-SMI 560.94                 Driver Version: 560.94         CUDA Version: 12.6     |
+         |-----------------------------------------+------------------------+----------------------+
+         | GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+         | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+         |                                         |                        |               MIG M. |
+         |=========================================+========================+======================|
+         |   0  NVIDIA GeForce RTX 3060 Ti   WDDM  |   00000000:07:00.0  On |                  N/A |
+         |  0%   45C    P8             26W /  200W |     888MiB /   8192MiB |      2%      Default |
+         |                                         |                        |                  N/A |
+         +-----------------------------------------+------------------------+----------------------+
+         ```
+      2. CUDA Version: 12.6, that means we need to use https://download.pytorch.org/whl/cu126. If your CUDA version is different, change digits after cu to match your version without any dots.
+         ```bash
+         pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu126
+         pip install -r requirements.txt
+         ```
+   2. If you don't have CUDA:
+      ```bash
+      pip install -r requirements.txt
+      ```
 
 3. Make sure FFmpeg is installed on your system. Visit the [FFmpeg download page](https://ffmpeg.org/download.html) for installation instructions.
 
