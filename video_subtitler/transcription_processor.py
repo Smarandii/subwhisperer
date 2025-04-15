@@ -1,4 +1,4 @@
-from __init__ import FileUtility
+from . import FileUtility
 
 
 class TranscriptionProcessor:

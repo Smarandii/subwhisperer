@@ -1,12 +1,12 @@
 import os
 import argparse
 
-from __init__ import TextMerger
-from __init__ import FileUtility
-from __init__ import AudioExtractor
-from __init__ import SegmentDetector
-from __init__ import WhisperTranscriber
-from __init__ import TranscriptionProcessor
+from . import TextMerger
+from . import FileUtility
+from . import AudioExtractor
+from . import SegmentDetector
+from . import WhisperTranscriber
+from . import TranscriptionProcessor
 
 
 def setup_argument_parser():
@@ -22,8 +22,8 @@ def process_video(video_file, audio_file, subtitle_file=None):
         audio_file = f"{os.path.splitext(video_file)[0]}.mp3"
     if subtitle_file is None:
         subtitle_file = f"{os.path.splitext(video_file)[0]}.srt"
-    merged_json_file = f"merged_chunks_{os.path.splitext(video_file)[0]}.json"
-    unmerged_json_chunks_file = f"unmerged_chunks_{os.path.splitext(video_file)[0]}.json"
+    merged_json_file = f"{os.path.splitext(video_file)[0]}_merged_chunks.json"
+    unmerged_json_chunks_file = f"{os.path.splitext(video_file)[0]}_unmerged_chunks.json"
     print(f"We got {video_file} - starting video processing...")
 
     ae = AudioExtractor(min_silence_len=5000, silence_thresh=-10)
