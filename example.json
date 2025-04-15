@@ -1,0 +1,1753 @@
+{
+    "text":" You gotta stop using boring captions like this in your videos. Instead, use these captions to grab attention every time. Here's exactly how to create them. Step number one, the font. This is the most important part. You can add as many cool effects as you want to your captions, but if you pick the wrong font, nothing is gonna save you. So here's a list of fonts we love and use all the time. Step number two, the glow. After you pick the right font, it's time to spice it up a bit, and we're going to do this with the glow effect. The fastest way to do this is by adding a white drop shadow and tweak the blur and opacity until you get something that looks like this. And last step is the inverted text. You've probably seen this effect going viral on social media, and the reason is simple, it just looks good. To do it, go into your font settings, find the blending mode or however it might be called in your software, and change it from normal to difference. So now that you know all of this, please...",
+    "segments":[
+        {
+            "id":0,
+            "seek":0,
+            "start":"np.float64(0.0)",
+            "end":"np.float64(3.16)",
+            "text":" You gotta stop using boring captions like this in your videos.",
+            "tokens":[
+                50365,
+                509,
+                3428,
+                1590,
+                1228,
+                9989,
+                44832,
+                411,
+                341,
+                294,
+                428,
+                2145,
+                13,
+                50535
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.12437109045080237,
+            "compression_ratio":1.75,
+            "no_speech_prob":0.0040047746151685715,
+            "words":[
+                {
+                    "word":" You",
+                    "start":"np.float64(0.0)",
+                    "end":"np.float64(0.14)",
+                    "probability":"np.float64(0.7909572124481201)"
+                },
+                {
+                    "word":" gotta",
+                    "start":"np.float64(0.14)",
+                    "end":"np.float64(0.4)",
+                    "probability":"np.float64(0.7572147250175476)"
+                },
+                {
+                    "word":" stop",
+                    "start":"np.float64(0.4)",
+                    "end":"np.float64(0.64)",
+                    "probability":"np.float64(0.9970068335533142)"
+                },
+                {
+                    "word":" using",
+                    "start":"np.float64(0.64)",
+                    "end":"np.float64(0.96)",
+                    "probability":"np.float64(0.995701253414154)"
+                },
+                {
+                    "word":" boring",
+                    "start":"np.float64(0.96)",
+                    "end":"np.float64(1.24)",
+                    "probability":"np.float64(0.9944378137588501)"
+                },
+                {
+                    "word":" captions",
+                    "start":"np.float64(1.24)",
+                    "end":"np.float64(1.6)",
+                    "probability":"np.float64(0.9935731291770935)"
+                },
+                {
+                    "word":" like",
+                    "start":"np.float64(1.6)",
+                    "end":"np.float64(1.96)",
+                    "probability":"np.float64(0.9911489486694336)"
+                },
+                {
+                    "word":" this",
+                    "start":"np.float64(1.96)",
+                    "end":"np.float64(2.26)",
+                    "probability":"np.float64(0.5449188947677612)"
+                },
+                {
+                    "word":" in",
+                    "start":"np.float64(2.26)",
+                    "end":"np.float64(2.56)",
+                    "probability":"np.float64(0.969189465045929)"
+                },
+                {
+                    "word":" your",
+                    "start":"np.float64(2.56)",
+                    "end":"np.float64(2.74)",
+                    "probability":"np.float64(0.9954808950424194)"
+                },
+                {
+                    "word":" videos.",
+                    "start":"np.float64(2.74)",
+                    "end":"np.float64(3.16)",
+                    "probability":"np.float64(0.9960777163505554)"
+                }
+            ]
+        },
+        {
+            "id":1,
+            "seek":0,
+            "start":"np.float64(3.32)",
+            "end":"np.float64(6.76)",
+            "text":" Instead, use these captions to grab attention every time.",
+            "tokens":[
+                50535,
+                7156,
+                11,
+                764,
+                613,
+                44832,
+                281,
+                4444,
+                3202,
+                633,
+                565,
+                13,
+                50717
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.12437109045080237,
+            "compression_ratio":1.75,
+            "no_speech_prob":0.0040047746151685715,
+            "words":[
+                {
+                    "word":" Instead,",
+                    "start":"np.float64(3.32)",
+                    "end":"np.float64(3.64)",
+                    "probability":"np.float64(0.9869081974029541)"
+                },
+                {
+                    "word":" use",
+                    "start":"np.float64(3.84)",
+                    "end":"np.float64(4.0)",
+                    "probability":"np.float64(0.9902293086051941)"
+                },
+                {
+                    "word":" these",
+                    "start":"np.float64(4.0)",
+                    "end":"np.float64(4.24)",
+                    "probability":"np.float64(0.9673694372177124)"
+                },
+                {
+                    "word":" captions",
+                    "start":"np.float64(4.24)",
+                    "end":"np.float64(4.72)",
+                    "probability":"np.float64(0.9956735968589783)"
+                },
+                {
+                    "word":" to",
+                    "start":"np.float64(4.72)",
+                    "end":"np.float64(5.08)",
+                    "probability":"np.float64(0.9963524341583252)"
+                },
+                {
+                    "word":" grab",
+                    "start":"np.float64(5.08)",
+                    "end":"np.float64(5.26)",
+                    "probability":"np.float64(0.9968311190605164)"
+                },
+                {
+                    "word":" attention",
+                    "start":"np.float64(5.26)",
+                    "end":"np.float64(5.56)",
+                    "probability":"np.float64(0.9918585419654846)"
+                },
+                {
+                    "word":" every",
+                    "start":"np.float64(5.56)",
+                    "end":"np.float64(6.38)",
+                    "probability":"np.float64(0.9124434590339661)"
+                },
+                {
+                    "word":" time.",
+                    "start":"np.float64(6.38)",
+                    "end":"np.float64(6.76)",
+                    "probability":"np.float64(0.9986653327941895)"
+                }
+            ]
+        },
+        {
+            "id":2,
+            "seek":0,
+            "start":"np.float64(7.0)",
+            "end":"np.float64(8.76)",
+            "text":" Here's exactly how to create them.",
+            "tokens":[
+                50717,
+                1692,
+                311,
+                2293,
+                577,
+                281,
+                1884,
+                552,
+                13,
+                50813
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.12437109045080237,
+            "compression_ratio":1.75,
+            "no_speech_prob":0.0040047746151685715,
+            "words":[
+                {
+                    "word":" Here's",
+                    "start":"np.float64(7.0)",
+                    "end":"np.float64(7.28)",
+                    "probability":"np.float64(0.974888265132904)"
+                },
+                {
+                    "word":" exactly",
+                    "start":"np.float64(7.28)",
+                    "end":"np.float64(7.66)",
+                    "probability":"np.float64(0.9876441359519958)"
+                },
+                {
+                    "word":" how",
+                    "start":"np.float64(7.66)",
+                    "end":"np.float64(8.04)",
+                    "probability":"np.float64(0.9987255930900574)"
+                },
+                {
+                    "word":" to",
+                    "start":"np.float64(8.04)",
+                    "end":"np.float64(8.22)",
+                    "probability":"np.float64(0.9954094290733337)"
+                },
+                {
+                    "word":" create",
+                    "start":"np.float64(8.22)",
+                    "end":"np.float64(8.52)",
+                    "probability":"np.float64(0.9955256581306458)"
+                },
+                {
+                    "word":" them.",
+                    "start":"np.float64(8.52)",
+                    "end":"np.float64(8.76)",
+                    "probability":"np.float64(0.9984872341156006)"
+                }
+            ]
+        },
+        {
+            "id":3,
+            "seek":0,
+            "start":"np.float64(8.96)",
+            "end":"np.float64(10.34)",
+            "text":" Step number one, the font.",
+            "tokens":[
+                50813,
+                5470,
+                1230,
+                472,
+                11,
+                264,
+                10703,
+                13,
+                50901
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.12437109045080237,
+            "compression_ratio":1.75,
+            "no_speech_prob":0.0040047746151685715,
+            "words":[
+                {
+                    "word":" Step",
+                    "start":"np.float64(8.96)",
+                    "end":"np.float64(9.14)",
+                    "probability":"np.float64(0.8576304912567139)"
+                },
+                {
+                    "word":" number",
+                    "start":"np.float64(9.14)",
+                    "end":"np.float64(9.4)",
+                    "probability":"np.float64(0.7044457793235779)"
+                },
+                {
+                    "word":" one,",
+                    "start":"np.float64(9.4)",
+                    "end":"np.float64(9.72)",
+                    "probability":"np.float64(0.8010542988777161)"
+                },
+                {
+                    "word":" the",
+                    "start":"np.float64(9.84)",
+                    "end":"np.float64(10.04)",
+                    "probability":"np.float64(0.9854364991188049)"
+                },
+                {
+                    "word":" font.",
+                    "start":"np.float64(10.04)",
+                    "end":"np.float64(10.34)",
+                    "probability":"np.float64(0.9906169772148132)"
+                }
+            ]
+        },
+        {
+            "id":4,
+            "seek":0,
+            "start":"np.float64(10.6)",
+            "end":"np.float64(12.46)",
+            "text":" This is the most important part.",
+            "tokens":[
+                50901,
+                639,
+                307,
+                264,
+                881,
+                1021,
+                644,
+                13,
+                51003
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.12437109045080237,
+            "compression_ratio":1.75,
+            "no_speech_prob":0.0040047746151685715,
+            "words":[
+                {
+                    "word":" This",
+                    "start":"np.float64(10.6)",
+                    "end":"np.float64(10.9)",
+                    "probability":"np.float64(0.9986346364021301)"
+                },
+                {
+                    "word":" is",
+                    "start":"np.float64(10.9)",
+                    "end":"np.float64(11.12)",
+                    "probability":"np.float64(0.9982917904853821)"
+                },
+                {
+                    "word":" the",
+                    "start":"np.float64(11.12)",
+                    "end":"np.float64(11.32)",
+                    "probability":"np.float64(0.9993763566017151)"
+                },
+                {
+                    "word":" most",
+                    "start":"np.float64(11.32)",
+                    "end":"np.float64(11.64)",
+                    "probability":"np.float64(0.998954176902771)"
+                },
+                {
+                    "word":" important",
+                    "start":"np.float64(11.64)",
+                    "end":"np.float64(12.04)",
+                    "probability":"np.float64(0.999707043170929)"
+                },
+                {
+                    "word":" part.",
+                    "start":"np.float64(12.04)",
+                    "end":"np.float64(12.46)",
+                    "probability":"np.float64(0.9994819760322571)"
+                }
+            ]
+        },
+        {
+            "id":5,
+            "seek":0,
+            "start":"np.float64(12.72)",
+            "end":"np.float64(15.12)",
+            "text":" You can add as many cool effects as you want to your captions,",
+            "tokens":[
+                51003,
+                509,
+                393,
+                909,
+                382,
+                867,
+                1627,
+                5065,
+                382,
+                291,
+                528,
+                281,
+                428,
+                44832,
+                11,
+                51131
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.12437109045080237,
+            "compression_ratio":1.75,
+            "no_speech_prob":0.0040047746151685715,
+            "words":[
+                {
+                    "word":" You",
+                    "start":"np.float64(12.72)",
+                    "end":"np.float64(12.8)",
+                    "probability":"np.float64(0.998855710029602)"
+                },
+                {
+                    "word":" can",
+                    "start":"np.float64(12.8)",
+                    "end":"np.float64(12.94)",
+                    "probability":"np.float64(0.9992986917495728)"
+                },
+                {
+                    "word":" add",
+                    "start":"np.float64(12.94)",
+                    "end":"np.float64(13.06)",
+                    "probability":"np.float64(0.9930315017700195)"
+                },
+                {
+                    "word":" as",
+                    "start":"np.float64(13.06)",
+                    "end":"np.float64(13.3)",
+                    "probability":"np.float64(0.9991869330406189)"
+                },
+                {
+                    "word":" many",
+                    "start":"np.float64(13.3)",
+                    "end":"np.float64(13.56)",
+                    "probability":"np.float64(0.9996044039726257)"
+                },
+                {
+                    "word":" cool",
+                    "start":"np.float64(13.56)",
+                    "end":"np.float64(13.82)",
+                    "probability":"np.float64(0.9953526258468628)"
+                },
+                {
+                    "word":" effects",
+                    "start":"np.float64(13.82)",
+                    "end":"np.float64(14.04)",
+                    "probability":"np.float64(0.9943888783454895)"
+                },
+                {
+                    "word":" as",
+                    "start":"np.float64(14.04)",
+                    "end":"np.float64(14.3)",
+                    "probability":"np.float64(0.9963158965110779)"
+                },
+                {
+                    "word":" you",
+                    "start":"np.float64(14.3)",
+                    "end":"np.float64(14.4)",
+                    "probability":"np.float64(0.9993470311164856)"
+                },
+                {
+                    "word":" want",
+                    "start":"np.float64(14.4)",
+                    "end":"np.float64(14.58)",
+                    "probability":"np.float64(0.9994893074035645)"
+                },
+                {
+                    "word":" to",
+                    "start":"np.float64(14.58)",
+                    "end":"np.float64(14.68)",
+                    "probability":"np.float64(0.9112313389778137)"
+                },
+                {
+                    "word":" your",
+                    "start":"np.float64(14.68)",
+                    "end":"np.float64(14.74)",
+                    "probability":"np.float64(0.9972905516624451)"
+                },
+                {
+                    "word":" captions,",
+                    "start":"np.float64(14.74)",
+                    "end":"np.float64(15.12)",
+                    "probability":"np.float64(0.9974014759063721)"
+                }
+            ]
+        },
+        {
+            "id":6,
+            "seek":0,
+            "start":"np.float64(15.3)",
+            "end":"np.float64(17.62)",
+            "text":" but if you pick the wrong font, nothing is gonna save you.",
+            "tokens":[
+                51131,
+                457,
+                498,
+                291,
+                1888,
+                264,
+                2085,
+                10703,
+                11,
+                1825,
+                307,
+                799,
+                3155,
+                291,
+                13,
+                51251
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.12437109045080237,
+            "compression_ratio":1.75,
+            "no_speech_prob":0.0040047746151685715,
+            "words":[
+                {
+                    "word":" but",
+                    "start":"np.float64(15.3)",
+                    "end":"np.float64(15.42)",
+                    "probability":"np.float64(0.9978564381599426)"
+                },
+                {
+                    "word":" if",
+                    "start":"np.float64(15.42)",
+                    "end":"np.float64(15.5)",
+                    "probability":"np.float64(0.9985468983650208)"
+                },
+                {
+                    "word":" you",
+                    "start":"np.float64(15.5)",
+                    "end":"np.float64(15.6)",
+                    "probability":"np.float64(0.9996204376220703)"
+                },
+                {
+                    "word":" pick",
+                    "start":"np.float64(15.6)",
+                    "end":"np.float64(15.78)",
+                    "probability":"np.float64(0.9926421046257019)"
+                },
+                {
+                    "word":" the",
+                    "start":"np.float64(15.78)",
+                    "end":"np.float64(15.88)",
+                    "probability":"np.float64(0.9994797110557556)"
+                },
+                {
+                    "word":" wrong",
+                    "start":"np.float64(15.88)",
+                    "end":"np.float64(16.06)",
+                    "probability":"np.float64(0.9997978806495667)"
+                },
+                {
+                    "word":" font,",
+                    "start":"np.float64(16.06)",
+                    "end":"np.float64(16.32)",
+                    "probability":"np.float64(0.9988033771514893)"
+                },
+                {
+                    "word":" nothing",
+                    "start":"np.float64(16.5)",
+                    "end":"np.float64(16.78)",
+                    "probability":"np.float64(0.9991563558578491)"
+                },
+                {
+                    "word":" is",
+                    "start":"np.float64(16.78)",
+                    "end":"np.float64(17.0)",
+                    "probability":"np.float64(0.9901345372200012)"
+                },
+                {
+                    "word":" gonna",
+                    "start":"np.float64(17.0)",
+                    "end":"np.float64(17.16)",
+                    "probability":"np.float64(0.6889997720718384)"
+                },
+                {
+                    "word":" save",
+                    "start":"np.float64(17.16)",
+                    "end":"np.float64(17.46)",
+                    "probability":"np.float64(0.9992376565933228)"
+                },
+                {
+                    "word":" you.",
+                    "start":"np.float64(17.46)",
+                    "end":"np.float64(17.62)",
+                    "probability":"np.float64(0.9996742010116577)"
+                }
+            ]
+        },
+        {
+            "id":7,
+            "seek":0,
+            "start":"np.float64(17.72)",
+            "end":"np.float64(20.54)",
+            "text":" So here's a list of fonts we love and use all the time.",
+            "tokens":[
+                51251,
+                407,
+                510,
+                311,
+                257,
+                1329,
+                295,
+                35316,
+                321,
+                959,
+                293,
+                764,
+                439,
+                264,
+                565,
+                13,
+                51409
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.12437109045080237,
+            "compression_ratio":1.75,
+            "no_speech_prob":0.0040047746151685715,
+            "words":[
+                {
+                    "word":" So",
+                    "start":"np.float64(17.72)",
+                    "end":"np.float64(17.88)",
+                    "probability":"np.float64(0.9840500950813293)"
+                },
+                {
+                    "word":" here's",
+                    "start":"np.float64(17.88)",
+                    "end":"np.float64(18.22)",
+                    "probability":"np.float64(0.8475545644760132)"
+                },
+                {
+                    "word":" a",
+                    "start":"np.float64(18.22)",
+                    "end":"np.float64(18.22)",
+                    "probability":"np.float64(0.9592552781105042)"
+                },
+                {
+                    "word":" list",
+                    "start":"np.float64(18.22)",
+                    "end":"np.float64(18.44)",
+                    "probability":"np.float64(0.9992369413375854)"
+                },
+                {
+                    "word":" of",
+                    "start":"np.float64(18.44)",
+                    "end":"np.float64(18.6)",
+                    "probability":"np.float64(0.9994053840637207)"
+                },
+                {
+                    "word":" fonts",
+                    "start":"np.float64(18.6)",
+                    "end":"np.float64(18.86)",
+                    "probability":"np.float64(0.9962869882583618)"
+                },
+                {
+                    "word":" we",
+                    "start":"np.float64(18.86)",
+                    "end":"np.float64(19.12)",
+                    "probability":"np.float64(0.99528968334198)"
+                },
+                {
+                    "word":" love",
+                    "start":"np.float64(19.12)",
+                    "end":"np.float64(19.38)",
+                    "probability":"np.float64(0.9982251524925232)"
+                },
+                {
+                    "word":" and",
+                    "start":"np.float64(19.38)",
+                    "end":"np.float64(19.68)",
+                    "probability":"np.float64(0.9913313388824463)"
+                },
+                {
+                    "word":" use",
+                    "start":"np.float64(19.68)",
+                    "end":"np.float64(19.88)",
+                    "probability":"np.float64(0.9989635944366455)"
+                },
+                {
+                    "word":" all",
+                    "start":"np.float64(19.88)",
+                    "end":"np.float64(20.1)",
+                    "probability":"np.float64(0.9996411800384521)"
+                },
+                {
+                    "word":" the",
+                    "start":"np.float64(20.1)",
+                    "end":"np.float64(20.28)",
+                    "probability":"np.float64(0.9993795156478882)"
+                },
+                {
+                    "word":" time.",
+                    "start":"np.float64(20.28)",
+                    "end":"np.float64(20.54)",
+                    "probability":"np.float64(0.9999364614486694)"
+                }
+            ]
+        },
+        {
+            "id":8,
+            "seek":0,
+            "start":"np.float64(21.400000000000002)",
+            "end":"np.float64(23.0)",
+            "text":" Step number two, the glow.",
+            "tokens":[
+                51451,
+                5470,
+                1230,
+                732,
+                11,
+                264,
+                17513,
+                13,
+                51529
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.12437109045080237,
+            "compression_ratio":1.75,
+            "no_speech_prob":0.0040047746151685715,
+            "words":[
+                {
+                    "word":" Step",
+                    "start":"np.float64(21.400000000000002)",
+                    "end":"np.float64(21.84)",
+                    "probability":"np.float64(0.9885003566741943)"
+                },
+                {
+                    "word":" number",
+                    "start":"np.float64(21.84)",
+                    "end":"np.float64(22.1)",
+                    "probability":"np.float64(0.9985590577125549)"
+                },
+                {
+                    "word":" two,",
+                    "start":"np.float64(22.1)",
+                    "end":"np.float64(22.5)",
+                    "probability":"np.float64(0.9978041052818298)"
+                },
+                {
+                    "word":" the",
+                    "start":"np.float64(22.58)",
+                    "end":"np.float64(22.76)",
+                    "probability":"np.float64(0.9943696856498718)"
+                },
+                {
+                    "word":" glow.",
+                    "start":"np.float64(22.76)",
+                    "end":"np.float64(23.0)",
+                    "probability":"np.float64(0.979171097278595)"
+                }
+            ]
+        },
+        {
+            "id":9,
+            "seek":0,
+            "start":"np.float64(23.22)",
+            "end":"np.float64(26.02)",
+            "text":" After you pick the right font, it's time to spice it up a bit,",
+            "tokens":[
+                51529,
+                2381,
+                291,
+                1888,
+                264,
+                558,
+                10703,
+                11,
+                309,
+                311,
+                565,
+                281,
+                19436,
+                309,
+                493,
+                257,
+                857,
+                11,
+                51669
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.12437109045080237,
+            "compression_ratio":1.75,
+            "no_speech_prob":0.0040047746151685715,
+            "words":[
+                {
+                    "word":" After",
+                    "start":"np.float64(23.22)",
+                    "end":"np.float64(23.42)",
+                    "probability":"np.float64(0.9990100860595703)"
+                },
+                {
+                    "word":" you",
+                    "start":"np.float64(23.42)",
+                    "end":"np.float64(23.62)",
+                    "probability":"np.float64(0.9995748400688171)"
+                },
+                {
+                    "word":" pick",
+                    "start":"np.float64(23.62)",
+                    "end":"np.float64(23.82)",
+                    "probability":"np.float64(0.9636847972869873)"
+                },
+                {
+                    "word":" the",
+                    "start":"np.float64(23.82)",
+                    "end":"np.float64(23.96)",
+                    "probability":"np.float64(0.9997031092643738)"
+                },
+                {
+                    "word":" right",
+                    "start":"np.float64(23.96)",
+                    "end":"np.float64(24.18)",
+                    "probability":"np.float64(0.9996675252914429)"
+                },
+                {
+                    "word":" font,",
+                    "start":"np.float64(24.18)",
+                    "end":"np.float64(24.44)",
+                    "probability":"np.float64(0.9992268085479736)"
+                },
+                {
+                    "word":" it's",
+                    "start":"np.float64(24.64)",
+                    "end":"np.float64(24.84)",
+                    "probability":"np.float64(0.9985348880290985)"
+                },
+                {
+                    "word":" time",
+                    "start":"np.float64(24.84)",
+                    "end":"np.float64(25.04)",
+                    "probability":"np.float64(0.9996670484542847)"
+                },
+                {
+                    "word":" to",
+                    "start":"np.float64(25.04)",
+                    "end":"np.float64(25.22)",
+                    "probability":"np.float64(0.9992913007736206)"
+                },
+                {
+                    "word":" spice",
+                    "start":"np.float64(25.22)",
+                    "end":"np.float64(25.42)",
+                    "probability":"np.float64(0.9986205101013184)"
+                },
+                {
+                    "word":" it",
+                    "start":"np.float64(25.42)",
+                    "end":"np.float64(25.58)",
+                    "probability":"np.float64(0.9994043111801147)"
+                },
+                {
+                    "word":" up",
+                    "start":"np.float64(25.58)",
+                    "end":"np.float64(25.72)",
+                    "probability":"np.float64(0.9991176724433899)"
+                },
+                {
+                    "word":" a",
+                    "start":"np.float64(25.72)",
+                    "end":"np.float64(25.8)",
+                    "probability":"np.float64(0.9986081719398499)"
+                },
+                {
+                    "word":" bit,",
+                    "start":"np.float64(25.8)",
+                    "end":"np.float64(26.02)",
+                    "probability":"np.float64(0.9990469813346863)"
+                }
+            ]
+        },
+        {
+            "id":10,
+            "seek":0,
+            "start":"np.float64(26.06)",
+            "end":"np.float64(28.04)",
+            "text":" and we're going to do this with the glow effect.",
+            "tokens":[
+                51669,
+                293,
+                321,
+                434,
+                516,
+                281,
+                360,
+                341,
+                365,
+                264,
+                17513,
+                1802,
+                13,
+                51789
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.12437109045080237,
+            "compression_ratio":1.75,
+            "no_speech_prob":0.0040047746151685715,
+            "words":[
+                {
+                    "word":" and",
+                    "start":"np.float64(26.06)",
+                    "end":"np.float64(26.16)",
+                    "probability":"np.float64(0.9989022016525269)"
+                },
+                {
+                    "word":" we're",
+                    "start":"np.float64(26.16)",
+                    "end":"np.float64(26.38)",
+                    "probability":"np.float64(0.9964806437492371)"
+                },
+                {
+                    "word":" going",
+                    "start":"np.float64(26.38)",
+                    "end":"np.float64(26.58)",
+                    "probability":"np.float64(0.9917248487472534)"
+                },
+                {
+                    "word":" to",
+                    "start":"np.float64(26.58)",
+                    "end":"np.float64(26.74)",
+                    "probability":"np.float64(0.9987130165100098)"
+                },
+                {
+                    "word":" do",
+                    "start":"np.float64(26.74)",
+                    "end":"np.float64(26.86)",
+                    "probability":"np.float64(0.9984626770019531)"
+                },
+                {
+                    "word":" this",
+                    "start":"np.float64(26.86)",
+                    "end":"np.float64(27.12)",
+                    "probability":"np.float64(0.9991523027420044)"
+                },
+                {
+                    "word":" with",
+                    "start":"np.float64(27.12)",
+                    "end":"np.float64(27.42)",
+                    "probability":"np.float64(0.9992895126342773)"
+                },
+                {
+                    "word":" the",
+                    "start":"np.float64(27.42)",
+                    "end":"np.float64(27.54)",
+                    "probability":"np.float64(0.8477945327758789)"
+                },
+                {
+                    "word":" glow",
+                    "start":"np.float64(27.54)",
+                    "end":"np.float64(27.76)",
+                    "probability":"np.float64(0.9619892835617065)"
+                },
+                {
+                    "word":" effect.",
+                    "start":"np.float64(27.76)",
+                    "end":"np.float64(28.04)",
+                    "probability":"np.float64(0.9981245398521423)"
+                }
+            ]
+        },
+        {
+            "id":11,
+            "seek":2804,
+            "start":"np.float64(28.04)",
+            "end":"np.float64(31.04)",
+            "text":" The fastest way to do this is by adding a white drop shadow",
+            "tokens":[
+                50365,
+                440,
+                14573,
+                636,
+                281,
+                360,
+                341,
+                307,
+                538,
+                5127,
+                257,
+                2418,
+                3270,
+                8576,
+                50507
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.15257301950842383,
+            "compression_ratio":1.6177474402730376,
+            "no_speech_prob":0.001205723499879241,
+            "words":[
+                {
+                    "word":" The",
+                    "start":"np.float64(28.04)",
+                    "end":"np.float64(28.52)",
+                    "probability":"np.float64(0.6259979605674744)"
+                },
+                {
+                    "word":" fastest",
+                    "start":"np.float64(28.52)",
+                    "end":"np.float64(28.78)",
+                    "probability":"np.float64(0.9772681593894958)"
+                },
+                {
+                    "word":" way",
+                    "start":"np.float64(28.78)",
+                    "end":"np.float64(29.0)",
+                    "probability":"np.float64(0.9971538782119751)"
+                },
+                {
+                    "word":" to",
+                    "start":"np.float64(29.0)",
+                    "end":"np.float64(29.14)",
+                    "probability":"np.float64(0.9875749945640564)"
+                },
+                {
+                    "word":" do",
+                    "start":"np.float64(29.14)",
+                    "end":"np.float64(29.3)",
+                    "probability":"np.float64(0.9913056492805481)"
+                },
+                {
+                    "word":" this",
+                    "start":"np.float64(29.3)",
+                    "end":"np.float64(29.52)",
+                    "probability":"np.float64(0.9890428185462952)"
+                },
+                {
+                    "word":" is",
+                    "start":"np.float64(29.52)",
+                    "end":"np.float64(29.7)",
+                    "probability":"np.float64(0.9414336681365967)"
+                },
+                {
+                    "word":" by",
+                    "start":"np.float64(29.7)",
+                    "end":"np.float64(29.84)",
+                    "probability":"np.float64(0.9879994988441467)"
+                },
+                {
+                    "word":" adding",
+                    "start":"np.float64(29.84)",
+                    "end":"np.float64(30.12)",
+                    "probability":"np.float64(0.9861302971839905)"
+                },
+                {
+                    "word":" a",
+                    "start":"np.float64(30.12)",
+                    "end":"np.float64(30.3)",
+                    "probability":"np.float64(0.9874780178070068)"
+                },
+                {
+                    "word":" white",
+                    "start":"np.float64(30.3)",
+                    "end":"np.float64(30.56)",
+                    "probability":"np.float64(0.6146034598350525)"
+                },
+                {
+                    "word":" drop",
+                    "start":"np.float64(30.56)",
+                    "end":"np.float64(30.76)",
+                    "probability":"np.float64(0.9395316243171692)"
+                },
+                {
+                    "word":" shadow",
+                    "start":"np.float64(30.76)",
+                    "end":"np.float64(31.04)",
+                    "probability":"np.float64(0.9874204993247986)"
+                }
+            ]
+        },
+        {
+            "id":12,
+            "seek":2804,
+            "start":"np.float64(31.04)",
+            "end":"np.float64(32.58)",
+            "text":" and tweak the blur and opacity",
+            "tokens":[
+                50507,
+                293,
+                29879,
+                264,
+                14257,
+                293,
+                41693,
+                50589
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.15257301950842383,
+            "compression_ratio":1.6177474402730376,
+            "no_speech_prob":0.001205723499879241,
+            "words":[
+                {
+                    "word":" and",
+                    "start":"np.float64(31.04)",
+                    "end":"np.float64(31.38)",
+                    "probability":"np.float64(0.8470715284347534)"
+                },
+                {
+                    "word":" tweak",
+                    "start":"np.float64(31.38)",
+                    "end":"np.float64(31.56)",
+                    "probability":"np.float64(0.9243471026420593)"
+                },
+                {
+                    "word":" the",
+                    "start":"np.float64(31.56)",
+                    "end":"np.float64(31.78)",
+                    "probability":"np.float64(0.9871523976325989)"
+                },
+                {
+                    "word":" blur",
+                    "start":"np.float64(31.78)",
+                    "end":"np.float64(31.98)",
+                    "probability":"np.float64(0.944397509098053)"
+                },
+                {
+                    "word":" and",
+                    "start":"np.float64(31.98)",
+                    "end":"np.float64(32.24)",
+                    "probability":"np.float64(0.960657000541687)"
+                },
+                {
+                    "word":" opacity",
+                    "start":"np.float64(32.24)",
+                    "end":"np.float64(32.58)",
+                    "probability":"np.float64(0.9772542715072632)"
+                }
+            ]
+        },
+        {
+            "id":13,
+            "seek":2804,
+            "start":"np.float64(32.58)",
+            "end":"np.float64(34.6)",
+            "text":" until you get something that looks like this.",
+            "tokens":[
+                50589,
+                1826,
+                291,
+                483,
+                746,
+                300,
+                1542,
+                411,
+                341,
+                13,
+                50685
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.15257301950842383,
+            "compression_ratio":1.6177474402730376,
+            "no_speech_prob":0.001205723499879241,
+            "words":[
+                {
+                    "word":" until",
+                    "start":"np.float64(32.58)",
+                    "end":"np.float64(33.14)",
+                    "probability":"np.float64(0.921610951423645)"
+                },
+                {
+                    "word":" you",
+                    "start":"np.float64(33.14)",
+                    "end":"np.float64(33.32)",
+                    "probability":"np.float64(0.9908066391944885)"
+                },
+                {
+                    "word":" get",
+                    "start":"np.float64(33.32)",
+                    "end":"np.float64(33.46)",
+                    "probability":"np.float64(0.9939423203468323)"
+                },
+                {
+                    "word":" something",
+                    "start":"np.float64(33.46)",
+                    "end":"np.float64(33.7)",
+                    "probability":"np.float64(0.9928210377693176)"
+                },
+                {
+                    "word":" that",
+                    "start":"np.float64(33.7)",
+                    "end":"np.float64(33.98)",
+                    "probability":"np.float64(0.9797639846801758)"
+                },
+                {
+                    "word":" looks",
+                    "start":"np.float64(33.98)",
+                    "end":"np.float64(34.18)",
+                    "probability":"np.float64(0.9972662925720215)"
+                },
+                {
+                    "word":" like",
+                    "start":"np.float64(34.18)",
+                    "end":"np.float64(34.36)",
+                    "probability":"np.float64(0.9971272349357605)"
+                },
+                {
+                    "word":" this.",
+                    "start":"np.float64(34.36)",
+                    "end":"np.float64(34.6)",
+                    "probability":"np.float64(0.9970431923866272)"
+                }
+            ]
+        },
+        {
+            "id":14,
+            "seek":2804,
+            "start":"np.float64(34.82)",
+            "end":"np.float64(36.96)",
+            "text":" And last step is the inverted text.",
+            "tokens":[
+                50685,
+                400,
+                1036,
+                1823,
+                307,
+                264,
+                38969,
+                2487,
+                13,
+                50805
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.15257301950842383,
+            "compression_ratio":1.6177474402730376,
+            "no_speech_prob":0.001205723499879241,
+            "words":[
+                {
+                    "word":" And",
+                    "start":"np.float64(34.82)",
+                    "end":"np.float64(34.96)",
+                    "probability":"np.float64(0.9141468405723572)"
+                },
+                {
+                    "word":" last",
+                    "start":"np.float64(34.96)",
+                    "end":"np.float64(35.24)",
+                    "probability":"np.float64(0.8933181762695312)"
+                },
+                {
+                    "word":" step",
+                    "start":"np.float64(35.24)",
+                    "end":"np.float64(35.52)",
+                    "probability":"np.float64(0.9594755172729492)"
+                },
+                {
+                    "word":" is",
+                    "start":"np.float64(35.52)",
+                    "end":"np.float64(35.88)",
+                    "probability":"np.float64(0.8895038366317749)"
+                },
+                {
+                    "word":" the",
+                    "start":"np.float64(35.88)",
+                    "end":"np.float64(36.08)",
+                    "probability":"np.float64(0.9704631567001343)"
+                },
+                {
+                    "word":" inverted",
+                    "start":"np.float64(36.08)",
+                    "end":"np.float64(36.52)",
+                    "probability":"np.float64(0.8772769570350647)"
+                },
+                {
+                    "word":" text.",
+                    "start":"np.float64(36.52)",
+                    "end":"np.float64(36.96)",
+                    "probability":"np.float64(0.9929308891296387)"
+                }
+            ]
+        },
+        {
+            "id":15,
+            "seek":2804,
+            "start":"np.float64(37.26)",
+            "end":"np.float64(39.6)",
+            "text":" You've probably seen this effect going viral on social media,",
+            "tokens":[
+                50805,
+                509,
+                600,
+                1391,
+                1612,
+                341,
+                1802,
+                516,
+                16132,
+                322,
+                2093,
+                3021,
+                11,
+                50927
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.15257301950842383,
+            "compression_ratio":1.6177474402730376,
+            "no_speech_prob":0.001205723499879241,
+            "words":[
+                {
+                    "word":" You've",
+                    "start":"np.float64(37.26)",
+                    "end":"np.float64(37.42)",
+                    "probability":"np.float64(0.9731506407260895)"
+                },
+                {
+                    "word":" probably",
+                    "start":"np.float64(37.42)",
+                    "end":"np.float64(37.58)",
+                    "probability":"np.float64(0.9976032376289368)"
+                },
+                {
+                    "word":" seen",
+                    "start":"np.float64(37.58)",
+                    "end":"np.float64(37.88)",
+                    "probability":"np.float64(0.9967995882034302)"
+                },
+                {
+                    "word":" this",
+                    "start":"np.float64(37.88)",
+                    "end":"np.float64(38.02)",
+                    "probability":"np.float64(0.996068000793457)"
+                },
+                {
+                    "word":" effect",
+                    "start":"np.float64(38.02)",
+                    "end":"np.float64(38.22)",
+                    "probability":"np.float64(0.9884384274482727)"
+                },
+                {
+                    "word":" going",
+                    "start":"np.float64(38.22)",
+                    "end":"np.float64(38.54)",
+                    "probability":"np.float64(0.7181686758995056)"
+                },
+                {
+                    "word":" viral",
+                    "start":"np.float64(38.54)",
+                    "end":"np.float64(38.82)",
+                    "probability":"np.float64(0.9997126460075378)"
+                },
+                {
+                    "word":" on",
+                    "start":"np.float64(38.82)",
+                    "end":"np.float64(39.02)",
+                    "probability":"np.float64(0.9850491881370544)"
+                },
+                {
+                    "word":" social",
+                    "start":"np.float64(39.02)",
+                    "end":"np.float64(39.22)",
+                    "probability":"np.float64(0.990814745426178)"
+                },
+                {
+                    "word":" media,",
+                    "start":"np.float64(39.22)",
+                    "end":"np.float64(39.6)",
+                    "probability":"np.float64(0.998322069644928)"
+                }
+            ]
+        },
+        {
+            "id":16,
+            "seek":2804,
+            "start":"np.float64(39.7)",
+            "end":"np.float64(41.66)",
+            "text":" and the reason is simple, it just looks good.",
+            "tokens":[
+                50927,
+                293,
+                264,
+                1778,
+                307,
+                2199,
+                11,
+                309,
+                445,
+                1542,
+                665,
+                13,
+                51033
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.15257301950842383,
+            "compression_ratio":1.6177474402730376,
+            "no_speech_prob":0.001205723499879241,
+            "words":[
+                {
+                    "word":" and",
+                    "start":"np.float64(39.7)",
+                    "end":"np.float64(39.8)",
+                    "probability":"np.float64(0.9832698106765747)"
+                },
+                {
+                    "word":" the",
+                    "start":"np.float64(39.8)",
+                    "end":"np.float64(39.9)",
+                    "probability":"np.float64(0.9963921904563904)"
+                },
+                {
+                    "word":" reason",
+                    "start":"np.float64(39.9)",
+                    "end":"np.float64(40.14)",
+                    "probability":"np.float64(0.99785977602005)"
+                },
+                {
+                    "word":" is",
+                    "start":"np.float64(40.14)",
+                    "end":"np.float64(40.28)",
+                    "probability":"np.float64(0.9917648434638977)"
+                },
+                {
+                    "word":" simple,",
+                    "start":"np.float64(40.28)",
+                    "end":"np.float64(40.62)",
+                    "probability":"np.float64(0.9977598190307617)"
+                },
+                {
+                    "word":" it",
+                    "start":"np.float64(40.72)",
+                    "end":"np.float64(40.84)",
+                    "probability":"np.float64(0.972663402557373)"
+                },
+                {
+                    "word":" just",
+                    "start":"np.float64(40.84)",
+                    "end":"np.float64(41.1)",
+                    "probability":"np.float64(0.9920458793640137)"
+                },
+                {
+                    "word":" looks",
+                    "start":"np.float64(41.1)",
+                    "end":"np.float64(41.38)",
+                    "probability":"np.float64(0.9981545805931091)"
+                },
+                {
+                    "word":" good.",
+                    "start":"np.float64(41.38)",
+                    "end":"np.float64(41.66)",
+                    "probability":"np.float64(0.9973690509796143)"
+                }
+            ]
+        },
+        {
+            "id":17,
+            "seek":2804,
+            "start":"np.float64(41.84)",
+            "end":"np.float64(44.56)",
+            "text":" To do it, go into your font settings, find the blending mode",
+            "tokens":[
+                51033,
+                1407,
+                360,
+                309,
+                11,
+                352,
+                666,
+                428,
+                10703,
+                6257,
+                11,
+                915,
+                264,
+                23124,
+                4391,
+                51175
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.15257301950842383,
+            "compression_ratio":1.6177474402730376,
+            "no_speech_prob":0.001205723499879241,
+            "words":[
+                {
+                    "word":" To",
+                    "start":"np.float64(41.84)",
+                    "end":"np.float64(41.94)",
+                    "probability":"np.float64(0.982613205909729)"
+                },
+                {
+                    "word":" do",
+                    "start":"np.float64(41.94)",
+                    "end":"np.float64(42.1)",
+                    "probability":"np.float64(0.9983252882957458)"
+                },
+                {
+                    "word":" it,",
+                    "start":"np.float64(42.1)",
+                    "end":"np.float64(42.28)",
+                    "probability":"np.float64(0.9895448088645935)"
+                },
+                {
+                    "word":" go",
+                    "start":"np.float64(42.28)",
+                    "end":"np.float64(42.36)",
+                    "probability":"np.float64(0.9819914698600769)"
+                },
+                {
+                    "word":" into",
+                    "start":"np.float64(42.36)",
+                    "end":"np.float64(42.54)",
+                    "probability":"np.float64(0.9444052577018738)"
+                },
+                {
+                    "word":" your",
+                    "start":"np.float64(42.54)",
+                    "end":"np.float64(42.72)",
+                    "probability":"np.float64(0.98504239320755)"
+                },
+                {
+                    "word":" font",
+                    "start":"np.float64(42.72)",
+                    "end":"np.float64(42.96)",
+                    "probability":"np.float64(0.8971447944641113)"
+                },
+                {
+                    "word":" settings,",
+                    "start":"np.float64(42.96)",
+                    "end":"np.float64(43.36)",
+                    "probability":"np.float64(0.9876343011856079)"
+                },
+                {
+                    "word":" find",
+                    "start":"np.float64(43.5)",
+                    "end":"np.float64(43.68)",
+                    "probability":"np.float64(0.9943636655807495)"
+                },
+                {
+                    "word":" the",
+                    "start":"np.float64(43.68)",
+                    "end":"np.float64(43.88)",
+                    "probability":"np.float64(0.9762311577796936)"
+                },
+                {
+                    "word":" blending",
+                    "start":"np.float64(43.88)",
+                    "end":"np.float64(44.16)",
+                    "probability":"np.float64(0.9221813678741455)"
+                },
+                {
+                    "word":" mode",
+                    "start":"np.float64(44.16)",
+                    "end":"np.float64(44.56)",
+                    "probability":"np.float64(0.9985696077346802)"
+                }
+            ]
+        },
+        {
+            "id":18,
+            "seek":2804,
+            "start":"np.float64(44.56)",
+            "end":"np.float64(46.46)",
+            "text":" or however it might be called in your software,",
+            "tokens":[
+                51175,
+                420,
+                4461,
+                309,
+                1062,
+                312,
+                1219,
+                294,
+                428,
+                4722,
+                11,
+                51271
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.15257301950842383,
+            "compression_ratio":1.6177474402730376,
+            "no_speech_prob":0.001205723499879241,
+            "words":[
+                {
+                    "word":" or",
+                    "start":"np.float64(44.56)",
+                    "end":"np.float64(44.78)",
+                    "probability":"np.float64(0.6909033060073853)"
+                },
+                {
+                    "word":" however",
+                    "start":"np.float64(44.78)",
+                    "end":"np.float64(45.12)",
+                    "probability":"np.float64(0.9757601618766785)"
+                },
+                {
+                    "word":" it",
+                    "start":"np.float64(45.12)",
+                    "end":"np.float64(45.38)",
+                    "probability":"np.float64(0.7136440873146057)"
+                },
+                {
+                    "word":" might",
+                    "start":"np.float64(45.38)",
+                    "end":"np.float64(45.5)",
+                    "probability":"np.float64(0.988342821598053)"
+                },
+                {
+                    "word":" be",
+                    "start":"np.float64(45.5)",
+                    "end":"np.float64(45.62)",
+                    "probability":"np.float64(0.9974266886711121)"
+                },
+                {
+                    "word":" called",
+                    "start":"np.float64(45.62)",
+                    "end":"np.float64(45.8)",
+                    "probability":"np.float64(0.8687614798545837)"
+                },
+                {
+                    "word":" in",
+                    "start":"np.float64(45.8)",
+                    "end":"np.float64(45.92)",
+                    "probability":"np.float64(0.9870314002037048)"
+                },
+                {
+                    "word":" your",
+                    "start":"np.float64(45.92)",
+                    "end":"np.float64(46.02)",
+                    "probability":"np.float64(0.9949546456336975)"
+                },
+                {
+                    "word":" software,",
+                    "start":"np.float64(46.02)",
+                    "end":"np.float64(46.46)",
+                    "probability":"np.float64(0.9979186654090881)}]"
+                }
+            ]
+        },
+        {
+            "id":19,
+            "seek":2804,
+            "start":"np.float64(46.56)",
+            "end":"np.float64(48.32)",
+            "text":" and change it from normal to difference.",
+            "tokens":[
+                51271,
+                293,
+                1319,
+                309,
+                490,
+                2710,
+                281,
+                2649,
+                13,
+                51375
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.15257301950842383,
+            "compression_ratio":1.6177474402730376,
+            "no_speech_prob":0.001205723499879241,
+            "words":[
+                {
+                    "word":" and",
+                    "start":"np.float64(46.56)",
+                    "end":"np.float64(46.7)",
+                    "probability":"np.float64(0.9960034489631653)"
+                },
+                {
+                    "word":" change",
+                    "start":"np.float64(46.7)",
+                    "end":"np.float64(46.98)",
+                    "probability":"np.float64(0.9967447519302368)"
+                },
+                {
+                    "word":" it",
+                    "start":"np.float64(46.98)",
+                    "end":"np.float64(47.14)",
+                    "probability":"np.float64(0.9867241978645325)"
+                },
+                {
+                    "word":" from",
+                    "start":"np.float64(47.14)",
+                    "end":"np.float64(47.32)",
+                    "probability":"np.float64(0.9963616728782654)"
+                },
+                {
+                    "word":" normal",
+                    "start":"np.float64(47.32)",
+                    "end":"np.float64(47.72)",
+                    "probability":"np.float64(0.7170682549476624)"
+                },
+                {
+                    "word":" to",
+                    "start":"np.float64(47.72)",
+                    "end":"np.float64(47.94)",
+                    "probability":"np.float64(0.9843336939811707)"
+                },
+                {
+                    "word":" difference.",
+                    "start":"np.float64(47.94)",
+                    "end":"np.float64(48.32)",
+                    "probability":"np.float64(0.8706209659576416)"
+                }
+            ]
+        },
+        {
+            "id":20,
+            "seek":2804,
+            "start":"np.float64(48.64)",
+            "end":"np.float64(50.7)",
+            "text":" So now that you know all of this, please...",
+            "tokens":[
+                51375,
+                407,
+                586,
+                300,
+                291,
+                458,
+                439,
+                295,
+                341,
+                11,
+                1767,
+                485,
+                51513
+            ],
+            "temperature":0.0,
+            "avg_logprob":-0.15257301950842383,
+            "compression_ratio":1.6177474402730376,
+            "no_speech_prob":0.001205723499879241,
+            "words":[
+                {
+                    "word":" So",
+                    "start":"np.float64(48.64)",
+                    "end":"np.float64(48.88)",
+                    "probability":"np.float64(0.9780901670455933)"
+                },
+                {
+                    "word":" now",
+                    "start":"np.float64(48.88)",
+                    "end":"np.float64(49.16)",
+                    "probability":"np.float64(0.6893683075904846)"
+                },
+                {
+                    "word":" that",
+                    "start":"np.float64(49.16)",
+                    "end":"np.float64(49.32)",
+                    "probability":"np.float64(0.9930307269096375)"
+                },
+                {
+                    "word":" you",
+                    "start":"np.float64(49.32)",
+                    "end":"np.float64(49.48)",
+                    "probability":"np.float64(0.996636152267456)"
+                },
+                {
+                    "word":" know",
+                    "start":"np.float64(49.48)",
+                    "end":"np.float64(49.6)",
+                    "probability":"np.float64(0.9961720108985901)"
+                },
+                {
+                    "word":" all",
+                    "start":"np.float64(49.6)",
+                    "end":"np.float64(49.88)",
+                    "probability":"np.float64(0.9897078275680542)"
+                },
+                {
+                    "word":" of",
+                    "start":"np.float64(49.88)",
+                    "end":"np.float64(50.04)",
+                    "probability":"np.float64(0.988742470741272)"
+                },
+                {
+                    "word":" this,",
+                    "start":"np.float64(50.04)",
+                    "end":"np.float64(50.24)",
+                    "probability":"np.float64(0.9623582363128662)"
+                },
+                {
+                    "word":" please...",
+                    "start":"np.float64(50.38)",
+                    "end":"np.float64(50.7)",
+                    "probability":"np.float64(0.6351049095392227)"
+                }
+            ]
+        }
+    ],
+    "language":"en"
+}

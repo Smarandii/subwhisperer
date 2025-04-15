@@ -13,6 +13,9 @@ model = whisper.load_model("large", device="cuda")
 
 # Transcribe the audio file
 result = model.transcribe(r"E:\Projects\python\reels_download_tool\reels_audio\DB2EVEQNmpp.flac", word_timestamps=True)
+# See model result example with word_timestamps=True at example.json
+
+
 transcription = result["text"]
 
 # Print the transcription
