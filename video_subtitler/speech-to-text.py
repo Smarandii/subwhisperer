@@ -12,7 +12,7 @@ else:
 model = whisper.load_model("large", device="cuda")
 
 # Transcribe the audio file
-result = model.transcribe("output.mp3")
+result = model.transcribe(r"E:\Projects\python\reels_download_tool\reels_audio\DB2EVEQNmpp.flac", word_timestamps=True)
 transcription = result["text"]
 
 # Print the transcription

@@ -5,6 +5,7 @@ from __init__ import TextMerger
 from __init__ import FileUtility
 from __init__ import AudioExtractor
 from __init__ import SegmentDetector
+from __init__ import WhisperTranscriber
 from __init__ import TranscriptionProcessor
 
 
