@@ -1,12 +1,7 @@
 import os
 import argparse
 
-from . import TextMerger
-from . import FileUtility
-from . import AudioExtractor
-from . import SegmentDetector
-from . import WhisperTranscriber
-from . import TranscriptionProcessor
+from . import TextMerger, FileUtility, AudioExtractor, SegmentDetector, WhisperTranscriber, TranscriptionProcessor
 
 
 def setup_argument_parser():
@@ -26,6 +21,7 @@ def process_video(
     video_file_full_path,
     audio_file_full_path=None,
     subtitle_file_full_path=None,
+    txt_file_full_path=None,
     output_directory_full_path=None
 ):
     # ensure output directory exists if provided
@@ -47,6 +43,11 @@ def process_video(
                 output_directory_full_path,
                 f"{base_name}.srt"
             )
+        if not txt_file_full_path:
+            txt_file_full_path = os.path.join(
+                output_directory_full_path,
+                f"{base_name}.txt"
+            )
         merged_json_file = os.path.join(
             output_directory_full_path,
             f"{base_name}_merged_chunks.json"
@@ -60,6 +61,8 @@ def process_video(
             audio_file_full_path = f"{base_name}.mp3"
         if not subtitle_file_full_path:
             subtitle_file_full_path = f"{base_name}.srt"
+        if not txt_file_full_path:
+            txt_file_full_path = f"{base_name}.txt"
         merged_json_file = f"{base_name}_merged_chunks.json"
         unmerged_json_chunks_file = f"{base_name}_unmerged_chunks.json"
 
@@ -108,6 +111,9 @@ def process_video(
 
     fu.generate_srt_file(merged_chunks, output_filename=subtitle_file_full_path)
     print(f"Generated subtitles: {subtitle_file_full_path}")
+
+    fu.generate_txt_file(merged_chunks, output_filename=txt_file_full_path)
+    print(f"Generated plain‑text transcript: {txt_file_full_path}")
 
 
 def main():

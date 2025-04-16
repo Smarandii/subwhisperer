@@ -39,3 +39,11 @@ class FileUtility:
 
                 text = chunk['text']
                 file.write(f"{i}\n{start_time} --> {end_time}\n{text}\n\n")
+
+    @staticmethod
+    def generate_txt_file(chunks, output_filename):
+        """Write all chunk texts into one plain‑text file (no timestamps)."""
+        os.makedirs(os.path.dirname(output_filename), exist_ok=True)
+        with open(output_filename, "w", encoding="utf-8") as file:
+            for chunk in chunks:
+                file.write(chunk['text'].strip() + "\n")
