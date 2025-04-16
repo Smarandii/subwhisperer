@@ -17,18 +17,44 @@ def setup_argument_parser():
     return parser
 
 
-def process_video(video_file, audio_file, subtitle_file=None):
-    if audio_file is None:
-        audio_file = f"{os.path.splitext(video_file)[0]}.mp3"
-    if subtitle_file is None:
-        subtitle_file = f"{os.path.splitext(video_file)[0]}.srt"
-    merged_json_file = f"{os.path.splitext(video_file)[0]}_merged_chunks.json"
-    unmerged_json_chunks_file = f"{os.path.splitext(video_file)[0]}_unmerged_chunks.json"
-    print(f"We got {video_file} - starting video processing...")
+def process_video(
+    video_file_full_path,
+    audio_file_full_path=None,
+    subtitle_file_full_path=None,
+    output_directory_full_path=None
+):
+    if output_directory_full_path is None:
+        if audio_file_full_path is None:
+            audio_file_full_path = f"{os.path.splitext(video_file_full_path)[0]}.mp3"
+        if subtitle_file_full_path is None:
+            subtitle_file_full_path = f"{os.path.splitext(video_file_full_path)[0]}.srt"
+        merged_json_file = f"{os.path.splitext(video_file_full_path)[0]}_merged_chunks.json"
+        unmerged_json_chunks_file = f"{os.path.splitext(video_file_full_path)[0]}_unmerged_chunks.json"
+    else:
+        if not audio_file_full_path:
+            audio_file_full_path = os.path.join(
+                output_directory_full_path,
+                os.path.splitext(os.path.basename(video_file_full_path))[0] + ".flac"
+            )
+        if not audio_file_full_path:
+            subtitle_file_full_path = os.path.join(
+                    output_directory_full_path,
+                    os.path.splitext(os.path.basename(video_file_full_path))[0] + ".srt"
+            )
+        merged_json_file = os.path.join(
+            output_directory_full_path,
+            os.path.splitext(os.path.basename(video_file_full_path))[0] + "_merged_chunks.json"
+        )
+        unmerged_json_chunks_file = os.path.join(
+            output_directory_full_path,
+            os.path.splitext(os.path.basename(video_file_full_path))[0] + "_unmerged_chunks.json"
+        )
+
+    print(f"We got {video_file_full_path} - starting video processing...")
 
     ae = AudioExtractor(min_silence_len=5000, silence_thresh=-10)
     fu = FileUtility()
-    sg = SegmentDetector(audio_file=audio_file)
+    sg = SegmentDetector(audio_file=audio_file_full_path)
     tm = TextMerger()
 
     segments = sg.detect_audio_segments()
@@ -36,8 +62,8 @@ def process_video(video_file, audio_file, subtitle_file=None):
     json_transcriptions = sg.detect_json_transcriptions()
     print(f"Found json transcriptions: {json_transcriptions}")
     if not segments:
-        pauses, total_duration_ms = ae.extract_audio_and_find_pauses(video_file, audio_file)
-        segments = ae.split_audio_based_on_silence(audio_file, pauses, total_duration_ms)
+        pauses, total_duration_ms = ae.extract_audio_and_find_pauses(video_file_full_path, audio_file_full_path)
+        segments = ae.split_audio_based_on_silence(audio_file_full_path, pauses, total_duration_ms)
 
     if not json_transcriptions:
         wt = WhisperTranscriber()
@@ -56,8 +82,8 @@ def process_video(video_file, audio_file, subtitle_file=None):
     else:
         merged_chunks = fu.load_chunks_from_json(merged_json_file)
 
-    fu.generate_srt_file(merged_chunks, subtitle_file)
-    print(f"Generated subtitles file: {subtitle_file}")
+    fu.generate_srt_file(merged_chunks, subtitle_file_full_path)
+    print(f"Generated subtitles file: {subtitle_file_full_path}")
 
 
 def main():
