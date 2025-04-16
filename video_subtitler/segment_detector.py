@@ -7,16 +7,12 @@ class SegmentDetector:
 
     def detect_json_transcriptions(self):
         """
-        Finds segment JSON files in the same directory as the audio.
+        Finds segment JSON files by directly matching the audio_file + suffix.
         """
         json_transcriptions = []
-        base, _ = os.path.splitext(self.audio_file)
-        directory = os.path.dirname(base)
-        stem = os.path.basename(base)
         index = 0
         while True:
-            filename = f"{stem}_segment_{index}.wav.json"
-            path = os.path.join(directory, filename) if directory else filename
+            path = f"{self.audio_file}_segment_{index}.wav.json"
             if os.path.exists(path):
                 json_transcriptions.append(path)
             else:
@@ -26,16 +22,12 @@ class SegmentDetector:
 
     def detect_audio_segments(self):
         """
-        Finds segment WAV files in the same directory as the audio.
+        Finds segment WAV files by directly matching the audio_file + suffix.
         """
         segments = []
-        base, _ = os.path.splitext(self.audio_file)
-        directory = os.path.dirname(base)
-        stem = os.path.basename(base)
         index = 0
         while True:
-            filename = f"{stem}_segment_{index}.wav"
-            path = os.path.join(directory, filename) if directory else filename
+            path = f"{self.audio_file}_segment_{index}.wav"
             if os.path.exists(path):
                 segments.append(path)
             else:
