@@ -20,14 +20,18 @@ class AudioExtractor:
         if not os.path.exists(audio_file):
             ffmpeg.input(video_file).output(audio_file).run()
         sound = AudioSegment.from_file(audio_file)
-        nonsilent_parts = detect_nonsilent(
-            sound,
-            min_silence_len=self.min_silence_len,
-            silence_thresh=self.silence_thresh,
-            seek_step=1
-        )
         total_duration_ms = len(sound)
-        return nonsilent_parts, total_duration_ms
+        if total_duration_ms > 180_000:
+            nonsilent_parts = detect_nonsilent(
+                sound,
+                min_silence_len=self.min_silence_len,
+                silence_thresh=self.silence_thresh,
+                seek_step=1
+            )
+
+            return nonsilent_parts, total_duration_ms
+
+        return None, total_duration_ms
 
     def split_audio_based_on_silence(self, audio_file, nonsilent_parts, total_duration_ms):
         segments = []

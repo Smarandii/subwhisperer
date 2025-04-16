@@ -34,29 +34,13 @@ def process_video(
 
     if output_directory_full_path:
         if not audio_file_full_path:
-            # use .mp3 for extracted audio
-            audio_file_full_path = os.path.join(
-                output_directory_full_path,
-                f"{base_name}.mp3"
-            )
+            audio_file_full_path = os.path.join(output_directory_full_path, f"{base_name}.mp3")
         if not subtitle_file_full_path:
-            subtitle_file_full_path = os.path.join(
-                output_directory_full_path,
-                f"{base_name}.srt"
-            )
+            subtitle_file_full_path = os.path.join(output_directory_full_path, f"{base_name}.srt")
         if not txt_file_full_path:
-            txt_file_full_path = os.path.join(
-                output_directory_full_path,
-                f"{base_name}.txt"
-            )
-        merged_json_file = os.path.join(
-            output_directory_full_path,
-            f"{base_name}_merged_chunks.json"
-        )
-        unmerged_json_chunks_file = os.path.join(
-            output_directory_full_path,
-            f"{base_name}_unmerged_chunks.json"
-        )
+            txt_file_full_path = os.path.join(output_directory_full_path, f"{base_name}.txt")
+        merged_json_file = os.path.join(output_directory_full_path, f"{base_name}_merged_chunks.json")
+        unmerged_json_chunks_file = os.path.join(output_directory_full_path, f"{base_name}_unmerged_chunks.json")
     else:
         if not audio_file_full_path:
             audio_file_full_path = f"{base_name}.mp3"
@@ -80,15 +64,23 @@ def process_video(
     print(f"Found existing JSON transcriptions: {json_transcriptions}")
 
     if not segments:
+        # extract audio and find pauses
         pauses, total_duration_ms = ae.extract_audio_and_find_pauses(
             video_file_full_path,
             audio_file_full_path
         )
-        segments = ae.split_audio_based_on_silence(
-            audio_file_full_path,
-            pauses,
-            total_duration_ms
-        )
+
+        if pauses is None:
+            segments = [audio_file_full_path]
+            print(f"Audio duration {total_duration_ms}ms <= 180000ms; skipping split into segments.")
+        else:
+            # split based on silence
+            segments = ae.split_audio_based_on_silence(
+                audio_file_full_path,
+                pauses,
+                total_duration_ms
+            )
+            print(f"Split audio into segments: {segments}")
 
     if not json_transcriptions:
         wt = WhisperTranscriber()
@@ -124,5 +116,6 @@ def main():
         video_file_full_path=args.video_file,
         audio_file_full_path=args.audio_file,
         subtitle_file_full_path=args.subtitle_file,
+        txt_file_full_path=args.transcription_file,
         output_directory_full_path=args.output_dir
     )
