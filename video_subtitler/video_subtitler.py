@@ -9,6 +9,7 @@ def setup_argument_parser():
     parser.add_argument("video_file", help="The path to the video file to process.")
     parser.add_argument("-a", "--audio_file", help="The path to save the extracted audio file.", required=False)
     parser.add_argument("-s", "--subtitle_file", help="The path to save the subtitle file.", required=False)
+    parser.add_argument("-t", "--transcription_file", help="The path to save the transcription file.", required=False)
     parser.add_argument(
         "-o", "--output_dir",
         help="Directory where all generated files will be saved.",
