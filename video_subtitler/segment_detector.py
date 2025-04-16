@@ -1,4 +1,4 @@
-import os.path
+import os
 
 
 class SegmentDetector:
@@ -6,25 +6,39 @@ class SegmentDetector:
         self.audio_file = audio_file
 
     def detect_json_transcriptions(self):
+        """
+        Finds segment JSON files in the same directory as the audio.
+        """
         json_transcriptions = []
-        segment_index = 0
+        base, _ = os.path.splitext(self.audio_file)
+        directory = os.path.dirname(base)
+        stem = os.path.basename(base)
+        index = 0
         while True:
-            segment_file = f"{self.audio_file}_segment_{segment_index}.wav.json"
-            if os.path.exists(segment_file):
-                json_transcriptions.append(segment_file)
-            segment_index += 1
-            if segment_index > 6:
+            filename = f"{stem}_segment_{index}.wav.json"
+            path = os.path.join(directory, filename) if directory else filename
+            if os.path.exists(path):
+                json_transcriptions.append(path)
+            else:
                 break
+            index += 1
         return json_transcriptions
 
     def detect_audio_segments(self):
-        audio_segments = []
-        segment_index = 0
+        """
+        Finds segment WAV files in the same directory as the audio.
+        """
+        segments = []
+        base, _ = os.path.splitext(self.audio_file)
+        directory = os.path.dirname(base)
+        stem = os.path.basename(base)
+        index = 0
         while True:
-            segment_file = f"{self.audio_file}_segment_{segment_index}.wav"
-            if os.path.exists(segment_file):
-                audio_segments.append(segment_file)
-            segment_index += 1
-            if segment_index > 6:
+            filename = f"{stem}_segment_{index}.wav"
+            path = os.path.join(directory, filename) if directory else filename
+            if os.path.exists(path):
+                segments.append(path)
+            else:
                 break
-        return audio_segments
+            index += 1
+        return segments

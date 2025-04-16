@@ -12,10 +12,20 @@ class AudioExtractor:
         self.max_length = max_length
 
     def extract_audio_and_find_pauses(self, video_file, audio_file='audio.mp3'):
+        # ensure output directory exists
+        audio_dir = os.path.dirname(audio_file)
+        if audio_dir and not os.path.exists(audio_dir):
+            os.makedirs(audio_dir, exist_ok=True)
+
         if not os.path.exists(audio_file):
             ffmpeg.input(video_file).output(audio_file).run()
         sound = AudioSegment.from_file(audio_file)
-        nonsilent_parts = detect_nonsilent(sound, min_silence_len=self.min_silence_len, silence_thresh=self.silence_thresh, seek_step=1)
+        nonsilent_parts = detect_nonsilent(
+            sound,
+            min_silence_len=self.min_silence_len,
+            silence_thresh=self.silence_thresh,
+            seek_step=1
+        )
         total_duration_ms = len(sound)
         return nonsilent_parts, total_duration_ms
 
@@ -29,14 +39,33 @@ class AudioExtractor:
                 segment_duration = end - last_split_point
             else:
                 continue
+
             segment_file = f"{audio_file}_segment_{len(segments)}.wav"
-            ffmpeg.input(audio_file, ss=last_split_point / 1000, t=segment_duration / 1000).output(segment_file).run()
+            segment_dir = os.path.dirname(segment_file)
+            if segment_dir and not os.path.exists(segment_dir):
+                os.makedirs(segment_dir, exist_ok=True)
+
+            ffmpeg.input(
+                audio_file,
+                ss=last_split_point / 1000,
+                t=segment_duration / 1000
+            ).output(segment_file).run()
             segments.append(segment_file)
             last_split_point = end
+
         if last_split_point < total_duration_ms:
             remaining_duration = total_duration_ms - last_split_point
             if remaining_duration > self.min_length:
                 segment_file = f"{audio_file}_segment_{len(segments)}.wav"
-                ffmpeg.input(audio_file, ss=last_split_point / 1000, t=remaining_duration / 1000).output(segment_file).run()
+                segment_dir = os.path.dirname(segment_file)
+                if segment_dir and not os.path.exists(segment_dir):
+                    os.makedirs(segment_dir, exist_ok=True)
+
+                ffmpeg.input(
+                    audio_file,
+                    ss=last_split_point / 1000,
+                    t=remaining_duration / 1000
+                ).output(segment_file).run()
                 segments.append(segment_file)
+
         return segments
