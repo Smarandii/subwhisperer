@@ -10,7 +10,7 @@ This repository contains a Python application that extracts audio from a video f
 
 ## Requirements
 
-- Python 3.x
+- Python 3.10
 - FFmpeg
 - Various Python libraries listed in `requirements.txt`
 

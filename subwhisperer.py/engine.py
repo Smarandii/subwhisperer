@@ -1,7 +1,10 @@
 import os
 import argparse
 
-from . import TextMerger, FileUtility, AudioExtractor, SegmentDetector, WhisperTranscriber, TranscriptionProcessor
+from subwhisperer.core import (
+    TextMerger, FileUtility, AudioExtractor,
+    SegmentDetector, WhisperTranscriber, TranscriptionProcessor
+)
 
 
 def setup_argument_parser():
@@ -23,7 +26,8 @@ def process_video(
     audio_file_full_path=None,
     subtitle_file_full_path=None,
     txt_file_full_path=None,
-    output_directory_full_path=None
+    output_directory_full_path=None,
+    device=None,
 ):
     # ensure output directory exists if provided
     if output_directory_full_path:

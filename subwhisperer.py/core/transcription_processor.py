@@ -1,5 +1,5 @@
 import os
-from . import FileUtility
+from subwhisperer.core import FileUtility
 
 
 class TranscriptionProcessor:
