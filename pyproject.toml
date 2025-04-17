@@ -6,7 +6,7 @@ include = ["subwhisperer*"]
 name = "subwhisperer"
 version = "1.0.0"
 description = "Generate subtitles (SRT/TXT) from video using OpenAI Whisper."
-readme = "README.md"
+readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.10"
 
 license     = {text = "MIT"}
@@ -30,3 +30,8 @@ dependencies = [
 
 [project.scripts]
 subwhisperer    = "subwhisperer.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Smarandii/subwhisperer"
+Documentation = "https://github.com/Smarandii/subwhisperer#readme"
+Source = "https://github.com/Smarandii/subwhisperer"
