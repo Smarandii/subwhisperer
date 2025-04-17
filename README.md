@@ -11,7 +11,7 @@ This repository contains a Python application that extracts audio from a video f
 ## Requirements
 
 - Python 3.10
-- FFmpeg
+- FFmpeg && FFprobe - you can get both via https://github.com/ffbinaries/ffbinaries-node or `sudo apt install ffmpeg`
 - Various Python libraries listed in `requirements.txt`
 
 ## Installation

@@ -1,7 +1,10 @@
+!tests/test.mp4
 *.mp4
 *.MP4
 *.mp3
 *.srt
+!requirements.txt
+**.txt
 *.json
 venv
 *.wav

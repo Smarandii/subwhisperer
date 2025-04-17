@@ -26,8 +26,7 @@ def process_video(
     audio_file_full_path=None,
     subtitle_file_full_path=None,
     txt_file_full_path=None,
-    output_directory_full_path=None,
-    device=None,
+    output_directory_full_path="."
 ):
     # ensure output directory exists if provided
     if output_directory_full_path:

@@ -1,3 +1,7 @@
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["subwhisperer*"]
+
 [project]
 name = "subwhisperer"
 version = "1.0.0"
@@ -26,5 +30,3 @@ dependencies = [
 
 [project.scripts]
 subwhisperer    = "subwhisperer.cli:main"
-subwhisperer-cpu   = "subwhisperer.cli:main_cpu"
-subwhisperer-cuda  = "subwhisperer.cli:main_cuda"
