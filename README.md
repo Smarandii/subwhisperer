@@ -28,6 +28,7 @@ generates **SRT** subtitles plus a **plain‑text transcript**.
 
 ## 🚀 Installation
 
+### Dev instalation:
 ```bash
 # 1 Clone the repo (only if you want to run from source)
 git clone https://github.com/Smarandii/subwhisperer.git
@@ -45,8 +46,14 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-After we publish to PyPI you’ll be able to do:
+### Regular user installation:
 
+#### GPU users
+```bash
+pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu126
+pip install subwhisperer
+```
+#### CPU users
 ```bash
 pip install subwhisperer
 ```
@@ -131,3 +138,6 @@ Huge thanks to [@arturtur](https://github.com/aturtur) for the After Effects
 script that imports SRT files – bundled here as
 *Import SRT into Adobe After Effects.jsx*.
 
+---
+
+This tool was developed as personal tool for creating fast subtitles and importing them to AE.
