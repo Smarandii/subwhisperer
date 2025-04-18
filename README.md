@@ -1,95 +1,133 @@
-# Video Subtitler with Whisper
+# Subwhisperer – Generate subtitles from any video using OpenAI Whisper
 
-This repository contains a Python application that extracts audio from a video file, transcribes it using OpenAI's Whisper model, and then generates subtitles in SRT format.
+Subwhisperer extracts audio from a video, transcribes it with OpenAI Whisper and
+generates **SRT** subtitles plus a **plain‑text transcript**.
 
-## Features
+---
 
-- **Audio Extraction**: Extracts audio from a video file.
-- **Speech Recognition**: Transcribes audio to text using OpenAI's Whisper model.
-- **Subtitle Generation**: Converts transcribed text into SRT format.
+## ✨ Features
 
-## Requirements
+* **Audio extraction** – pulls the audio track out of any video that FFmpeg can
+  decode.
+* **Speech recognition** – runs Whisper *large* locally (GPU or CPU) with
+  word‑level timestamps.
+* **Smart chunking** – splits long videos on silence then merges chunks so that
+  every subtitle line is comfortably readable.
+* **Multiple outputs** – `*.srt`, `*.txt`, per‑segment JSON files.
 
-- Python 3.10
-- FFmpeg && FFprobe - you can get both via https://github.com/ffbinaries/ffbinaries-node or `sudo apt install ffmpeg`
-- Various Python libraries listed in `requirements.txt`
+---
 
-## Installation
+## 📋 Requirements
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/video-subtitler.git
-   cd video-subtitler
-   ```
+* **Python 3.10+**
+* **FFmpeg & FFprobe** – install via your package manager (`sudo apt install ffmpeg`) or [ffbinaries](https://github.com/ffbinaries/ffbinaries-node).
+* **Torch + CUDA (optional)** – if you have an NVIDIA GPU you’ll want the GPU
+  wheels (see below).
 
-2. Install the required Python libraries:
-   1. if you have CUDA:
-      1. Check your cuda version
-         ```bash
-         nvidia-smi
-         ```
-         ```bash
-         +-----------------------------------------------------------------------------------------+
-         | NVIDIA-SMI 560.94                 Driver Version: 560.94         CUDA Version: 12.6     |
-         |-----------------------------------------+------------------------+----------------------+
-         | GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
-         | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
-         |                                         |                        |               MIG M. |
-         |=========================================+========================+======================|
-         |   0  NVIDIA GeForce RTX 3060 Ti   WDDM  |   00000000:07:00.0  On |                  N/A |
-         |  0%   45C    P8             26W /  200W |     888MiB /   8192MiB |      2%      Default |
-         |                                         |                        |                  N/A |
-         +-----------------------------------------+------------------------+----------------------+
-         ```
-      2. CUDA Version: 12.6, that means we need to use https://download.pytorch.org/whl/cu126. If your CUDA version is different, change digits after cu to match your version without any dots.
-         ```bash
-         pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu126
-         pip install -r requirements.txt
-         ```
-   2. If you don't have CUDA:
-      ```bash
-      pip install -r requirements.txt
-      ```
+---
 
-3. Make sure FFmpeg is installed on your system. Visit the [FFmpeg download page](https://ffmpeg.org/download.html) for installation instructions.
+## 🚀 Installation
 
-## Usage
+```bash
+# 1 Clone the repo (only if you want to run from source)
+git clone https://github.com/Smarandii/subwhisperer.git
+cd subwhisperer
 
-1. To use the application, you need to pass the path to the video file as an argument. Optionally, you can specify the paths for the extracted audio and output subtitle file.
+# 2 Install the Python requirements
+#    – GPU users: match the cuXXX part to your CUDA version
+pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu126
+pip install -r requirements.txt
 
-   ```bash
-   python vsub.py path_to_video.mp4 --audio_file path_to_audio.mp3 --subtitle_file path_to_subtitle.srt
-   ```
+#    – CPU‑only users can skip the first line and simply run:
+# pip install -r requirements.txt
 
-   For example:
+# 3 (Dev mode) Install the package into your environment
+pip install -e .
+```
 
-   ```bash
-   python vsub.py video.mp4
-   ```
+After we publish to PyPI you’ll be able to do:
 
-   This command will extract audio, transcribe it, and generate subtitles in the same directory as the video file.
+```bash
+pip install subwhisperer
+```
 
-## Files Description
+---
 
-- `vsub.py`: The main Python script that orchestrates the extraction, transcription, and subtitle generation.
-- `utils/`: Contains helper classes for audio extraction, transcription, text merging, and more.
-- `requirements.txt`: A list of Python libraries required to run the application.
+## 🔧 Usage
 
-## Troubleshooting
+From anywhere:
 
-If you encounter any issues with the transcription or subtitle generation:
-- Ensure that your FFmpeg installation is up to date.
-- Check that the paths and filenames in the scripts are correct.
-- Verify that the audio and video files are not corrupted and are in a format supported by FFmpeg.
+```bash
+subwhisperer /path/to/video.mp4 \
+             --output_dir outputs/            # optional
+             --audio_file custom/audio.mp3    # optional
+             --subtitle_file custom/subs.srt  # optional
+             --transcription_file out.txt     # optional
+```
 
-## Contributing
+You can also invoke it directly:
 
-Contributions to this project are welcome. Please fork the repository, make your changes, and submit a pull request.
+```bash
+python -m subwhisperer.cli /path/to/video.mp4
+```
 
-## License
+The command will:
 
-This project is open-sourced under the MIT License. See the LICENSE file for more details.
+1. Extract `/output_dir/video.mp3` (or reuse it if it already exists)
+2. Split it on silence > 5 s (configurable inside `AudioExtractor`)
+3. Transcribe each chunk with Whisper
+4. Merge the chunks and write
+   * `video.srt` – ready for any player/editor
+   * `video.txt` – the plain transcript
+   * `*_chunks.json` – raw Whisper output before/after merging
 
-## Special thanks!
-Thanks [@arturtur](https://github.com/aturtur) for script that imports srt file into Adobe After Effects project.
-Link to the script: [Messing with After Effects and Subtitles](https://aturtur.com/messing-with-after-effects-and-subtitles/)
+---
+
+## 🗂️ Project layout (important bits)
+
+```
+subwhisperer/
+├─ src/
+│  └─ subwhisperer/
+│     ├─ cli.py               # entry‑point / argument parsing
+│     └─ core/                # building blocks
+│         ├─ audio_extractor.py
+│         ├─ whisper_transcriber.py
+│         ├─ text_merger.py
+│         └─ ...
+└─ tests/
+   └─ test_process_video.py   # quick smoke test
+```
+
+---
+
+## 🆘 Troubleshooting
+
+* *CUDA not detected* – make sure you installed the **matching** Torch wheel and
+  that `nvidia-smi` shows your GPU.
+* *Subtitles out of sync* – adjust `max_length`, `threshold` or the silence
+  parameters in `TextMerger` / `AudioExtractor`.
+* *Whisper is slow on CPU* – try `--device cuda` (automatic if CUDA is
+  available) or down‑grade to a smaller Whisper model.
+
+---
+
+## 🤝 Contributing
+
+Pull requests and feature ideas are welcome. Please open an issue first if you
+plan a large change.
+
+---
+
+## 📄 License
+
+MIT © Smarandii 2024–present
+
+---
+
+### 🙏 Special thanks
+
+Huge thanks to [@arturtur](https://github.com/aturtur) for the After Effects
+script that imports SRT files – bundled here as
+*Import SRT into Adobe After Effects.jsx*.
+
