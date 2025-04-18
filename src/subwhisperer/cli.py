@@ -26,7 +26,7 @@ def process_video(
     audio_file_full_path=None,
     subtitle_file_full_path=None,
     txt_file_full_path=None,
-    output_directory_full_path="."
+    output_directory_full_path=None
 ):
     # ensure output directory exists if provided
     if output_directory_full_path:
@@ -35,24 +35,16 @@ def process_video(
     # determine defaults for audio and subtitle paths
     base_name = os.path.splitext(os.path.basename(video_file_full_path))[0]
 
-    if output_directory_full_path:
-        if not audio_file_full_path:
-            audio_file_full_path = os.path.join(output_directory_full_path, f"{base_name}.mp3")
-        if not subtitle_file_full_path:
-            subtitle_file_full_path = os.path.join(output_directory_full_path, f"{base_name}.srt")
-        if not txt_file_full_path:
-            txt_file_full_path = os.path.join(output_directory_full_path, f"{base_name}.txt")
-        merged_json_file = os.path.join(output_directory_full_path, f"{base_name}_merged_chunks.json")
-        unmerged_json_chunks_file = os.path.join(output_directory_full_path, f"{base_name}_unmerged_chunks.json")
-    else:
-        if not audio_file_full_path:
-            audio_file_full_path = f"{base_name}.mp3"
-        if not subtitle_file_full_path:
-            subtitle_file_full_path = f"{base_name}.srt"
-        if not txt_file_full_path:
-            txt_file_full_path = f"{base_name}.txt"
-        merged_json_file = f"{base_name}_merged_chunks.json"
-        unmerged_json_chunks_file = f"{base_name}_unmerged_chunks.json"
+    if not output_directory_full_path:
+        output_directory_full_path = video_file_full_path.parent
+    if not audio_file_full_path:
+        audio_file_full_path = os.path.join(output_directory_full_path, f"{base_name}.mp3")
+    if not subtitle_file_full_path:
+        subtitle_file_full_path = os.path.join(output_directory_full_path, f"{base_name}.srt")
+    if not txt_file_full_path:
+        txt_file_full_path = os.path.join(output_directory_full_path, f"{base_name}.txt")
+    merged_json_file = os.path.join(output_directory_full_path, f"{base_name}_merged_chunks.json")
+    unmerged_json_chunks_file = os.path.join(output_directory_full_path, f"{base_name}_unmerged_chunks.json")
 
     print(f"Starting processing of '{video_file_full_path}'...")
 

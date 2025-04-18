@@ -1,7 +1,7 @@
 pydub
-torch==2.6.0
-torchaudio==2.6.0
-torchvision==0.21.0
+torch
+torchaudio
+torchvision
 transformers
 ffmpeg-python
 openai-whisper
